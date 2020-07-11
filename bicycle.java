@@ -29,7 +29,7 @@ class Gear{
 
 public class bicycle{
 	public static void main(String[] args){
-		//Gear obj = new Gear(52, 11); won't work now
+		//Gear obj = new Gear(52, 11); won't work now 
 		Gear obj = new Gear(52, 11, 26, 1.5);
 		System.out.println(obj.gear_inches());
 	}
