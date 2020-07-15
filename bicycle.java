@@ -8,42 +8,38 @@ import java.util.*;
 class Wheel{
 	private int rim;
 	private double tire;
+	Gear obj = null;
 
-	public Wheel(int rim, double tire){
+	public Wheel(int rim, double tire, int chainRing, int cog){
 		this.rim = rim;
 		this.tire = tire;
+		obj = new Gear(chainRing,cog);
 	}
 
 	public double diameter(){
 		return rim + (tire * 2.0);
 	}
 
-	public double circumference(){
-		return diameter() * Math.PI;
+	public double gear_inches(){
+		return obj.gear_inches(diameter());
 	}
 }
 
 class Gear {
 	private int chainRing;
 	private int cog;
-	Wheel obj = null;
 
 	public Gear(int chainRing, int cog){
 		this.chainRing = chainRing;
 		this.cog = cog;
-		//this.obj = obj;
-	}
-
-	public void setObj(Wheel obj){
-		this.obj = obj;
 	}
 
 	public double ratio(){
 		return chainRing / (double)cog;
 	}
 
-	public double gear_inches(){
-		return ratio() * obj.diameter();
+	public double gear_inches(double diameter){
+		return ratio() * diameter;
 	}
 }
 
@@ -54,11 +50,11 @@ public class bicycle{
 		// System.out.println(obj.gear_inches());
 		// obj = new Gear(52, 11, 25, 1.5);
 		// System.out.println(obj.gear_inches());
-		Wheel mrf = new Wheel(26, 1.5);
-		System.out.println(mrf.circumference());
-		Gear obj = new Gear(52, 11);
-		obj.setObj(mrf);
-		System.out.println(obj.gear_inches());
-		System.out.println(obj.ratio());
+		Wheel mrf = new Wheel(26, 1.5, 52, 11);
+		System.out.println(mrf.gear_inches());
+		// Gear obj = new Gear(52, 11);
+		// obj.setObj(mrf);
+		// System.out.println(obj.gear_inches());
+		// System.out.println(obj.ratio());
 	}
 }
