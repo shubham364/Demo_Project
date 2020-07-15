@@ -43,6 +43,21 @@ class Gear {
 	}
 }
 
+class Cycle{
+	private String size;
+	private String tape_color;
+
+	public Cycle(String size, String tape_color){
+		this.size = size;
+		this.tape_color = tape_color;
+	}
+
+	public void spares(){
+		String chain = "10-speed";
+		int tire_size = 23;
+		String tape_color = this.tape_color;
+	}
+}
 public class bicycle{
 	public static void main(String[] args){
 		//Gear obj = new Gear(52, 11); won't work now 
@@ -50,11 +65,12 @@ public class bicycle{
 		// System.out.println(obj.gear_inches());
 		// obj = new Gear(52, 11, 25, 1.5);
 		// System.out.println(obj.gear_inches());
-		Wheel mrf = new Wheel(26, 1.5, 52, 11);
-		System.out.println(mrf.gear_inches());
+		// Wheel mrf = new Wheel(26, 1.5, 52, 11);
+		// System.out.println(mrf.gear_inches());
 		// Gear obj = new Gear(52, 11);
 		// obj.setObj(mrf);
 		// System.out.println(obj.gear_inches());
 		// System.out.println(obj.ratio());
+		Cycle atlas = new Cycle("M", "red");
 	}
 }
